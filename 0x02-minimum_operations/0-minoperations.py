@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+
 """
-Module to calculate minimum operations needed to achieve
-certain number of 'H' using Copy All and Paste operations.
+Module to calculate minimum operations needed to achieve a certain
+number of 'H' using Copy All and Paste operations.
 """
 
 
@@ -11,11 +12,11 @@ def minOperations(n):
     "Copy All" and "Paste" operations.
 
     Args:
-    n (int): The target number of characters.
+        n (int): The target number of characters.
 
     Returns:
-    int: The minimum number of operations needed to achieve n characters.
-         If n is impossible to achieve, return 0.
+        int: The minimum number of operations needed to achieve n characters.
+             If n is impossible to achieve, return 0.
     """
     if n < 2:
         return n
