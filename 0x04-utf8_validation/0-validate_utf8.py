@@ -53,19 +53,22 @@ def validUTF8(data):
         if num_leading_ones == 0:
             i += 1
         elif num_leading_ones == 2:
-            if (i + 1 >= n or
-                    not is_continuation(data[i + 1])):
+            if i + 1 >= n:
+                return False
+            if not is_continuation(data[i + 1]):
                 return False
             i += 2
         elif num_leading_ones == 3:
-            if (i + 2 >= n or
-                    not is_continuation(data[i + 1]) or
+            if i + 2 >= n:
+                return False
+            if (not is_continuation(data[i + 1]) or
                     not is_continuation(data[i + 2])):
                 return False
             i += 3
         elif num_leading_ones == 4:
-            if (i + 3 >= n or
-                    not is_continuation(data[i + 1]) or
+            if i + 3 >= n:
+                return False
+            if (not is_continuation(data[i + 1]) or
                     not is_continuation(data[i + 2]) or
                     not is_continuation(data[i + 3])):
                 return False
