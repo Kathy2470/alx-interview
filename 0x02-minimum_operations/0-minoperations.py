@@ -1,34 +1,23 @@
 #!/usr/bin/python3
-
-"""
-Module to calculate minimum operations needed to achieve a certain
-number of 'H' using Copy All and Paste operations.
-"""
+'''
+    MinOperations
+'''
 
 
 def minOperations(n):
-    """
-    Calculate the minimum number of operations to achieve n characters using
-    "Copy All" and "Paste" operations.
+    '''Computes the fewest number of operations needed to result
+    in exactly n H characters.
+    '''
+    if not isinstance(n, int) or n <= 1:
+        return 0
 
-    Args:
-        n (int): The target number of characters.
+    operations = 0
+    factor = 2
 
-    Returns:
-        int: The minimum number of operations needed to achieve n characters.
-             If n is impossible to achieve, return 0.
-    """
-    if n < 2:
-        return n
+    while n > 1:
+        while n % factor == 0:
+            operations += factor
+            n //= factor
+        factor += 1
 
-    dp = [float('inf')] * (n + 1)
-    dp[1] = 0
-
-    for i in range(2, n + 1):
-        j = 1
-        while j * j <= i:
-            if i % j == 0:
-                dp[i] = min(dp[i], dp[j] + i // j)
-            j += 1
-
-    return dp[n] if dp[n] != float('inf') else 0
+    return operations
