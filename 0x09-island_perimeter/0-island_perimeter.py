@@ -4,6 +4,7 @@ This module contains the function `island_perimeter`
 to calculate the perimeter of an island in a grid.
 """
 
+
 def island_perimeter(grid):
     """
     Calculate the perimeter of an island represented by 1s in a grid.
