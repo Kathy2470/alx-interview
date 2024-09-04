@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Prime Game Algorithm Python"""
 
+
 def sieve_of_eratosthenes(max_num):
     """
     Generate a list of primes up to max_num using Sieve of Eratosthenes.
