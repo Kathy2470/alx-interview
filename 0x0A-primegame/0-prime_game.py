@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Prime Game Algorithm Python"""
 
 def sieve_of_eratosthenes(max_num):
     """
